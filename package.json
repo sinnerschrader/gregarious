@@ -1,0 +1,30 @@
+{
+  "name": "gregarious",
+  "version": "0.1.0",
+  "description": "call nested npm scripts (similar to lerna)",
+  "main": "./index.js",
+  "bin": {
+    "greg": "./index.js"
+  },
+  "scripts": {
+    "release": "standard-version",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sinnerschrader/gregarious.git"
+  },
+  "keywords": ["nested", "scripts", "npm", "lerna", "nonorepo", "workspaces"],
+  "author": "Gregor Adams <greg@pixelass.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sinnerschrader/gregarious/issues"
+  },
+  "homepage": "https://github.com/sinnerschrader/gregarious#readme",
+  "dependencies": {
+    "execa": "^0.9.0",
+    "globby": "^8.0.1",
+    "meow": "^4.0.0",
+    "standard-version": "^4.3.0"
+  }
+}
