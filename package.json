@@ -19,7 +19,7 @@
     "scripts",
     "npm",
     "lerna",
-    "nonorepo",
+    "monorepo",
     "workspaces"
   ],
   "author": "Gregor Adams <greg@pixelass.com>",

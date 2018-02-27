@@ -9,15 +9,15 @@ const greg = require(".");
 
 const cli = meow(
   `
-	Usage
-	  $ greg <input>
+  Usage
+    $ greg <input>
 
-	Options
-	  --scope, -s  scope of the package 
+  Options
+    --scope, -s  scope of the package
 
-	Examples
-	  $ greg run foo --scope packages/foo
-	  cd packages/foo && npm run foo
+  Examples
+    $ greg run foo --scope packages/foo
+    cd packages/foo && npm run foo
 `,
   {
     flags: {
