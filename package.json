@@ -1,6 +1,6 @@
 {
   "name": "gregarious",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "call nested npm scripts (similar to lerna)",
   "main": "./index.js",
   "bin": {
@@ -14,7 +14,14 @@
     "type": "git",
     "url": "git+https://github.com/sinnerschrader/gregarious.git"
   },
-  "keywords": ["nested", "scripts", "npm", "lerna", "nonorepo", "workspaces"],
+  "keywords": [
+    "nested",
+    "scripts",
+    "npm",
+    "lerna",
+    "nonorepo",
+    "workspaces"
+  ],
   "author": "Gregor Adams <greg@pixelass.com>",
   "license": "MIT",
   "bugs": {
