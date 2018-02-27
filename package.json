@@ -14,7 +14,14 @@
     "type": "git",
     "url": "git+https://github.com/sinnerschrader/gregarious.git"
   },
-  "keywords": ["nested", "scripts", "npm", "lerna", "nonorepo", "workspaces"],
+  "keywords": [
+    "nested",
+    "scripts",
+    "npm",
+    "lerna",
+    "nonorepo",
+    "workspaces"
+  ],
   "author": "Gregor Adams <greg@pixelass.com>",
   "license": "MIT",
   "bugs": {
@@ -25,6 +32,7 @@
     "execa": "^0.9.0",
     "globby": "^8.0.1",
     "meow": "^4.0.0",
+    "pkg-dir": "^2.0.0",
     "standard-version": "^4.3.0"
   }
 }
