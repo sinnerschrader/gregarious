@@ -11,7 +11,6 @@ All notable changes to this project will be documented in this file. See [standa
 * correct pkg json origin ([c294c4f](https://github.com/sinnerschrader/gregarious/commit/c294c4f))
 
 
-
 <a name="0.1.0"></a>
 # 0.1.0 (2018-02-27)
 

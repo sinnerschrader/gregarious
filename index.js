@@ -8,15 +8,15 @@ const globby = require("globby");
 const pkgDir = require("pkg-dir");
 const cli = meow(
   `
-    Usage
+  Usage
     $ greg <input>
 
-    Options
-      --scope, -s  scope of the package 
+  Options
+    --scope, -s  scope of the package
 
-    Examples
-      $ greg run foo --scope packages/foo
-      cd packages/foo && npm run foo
+  Examples
+    $ greg run foo --scope packages/foo
+    cd packages/foo && npm run foo
 `,
   {
     flags: {
