@@ -1,6 +1,6 @@
 {
   "name": "gregarious",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "call nested npm scripts (similar to lerna)",
   "main": "./index.js",
   "bin": {
