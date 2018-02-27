@@ -1,6 +1,17 @@
 # gregarious
 
-call nested npm scripts (similar to lerna)
+call nested npm scripts. This is similar to lerna but with
+"no string attached".
+
+> Definition of gregarious
+>
+> 1. a. tending to associate with others of one's kind : social gregarious animals  
+>    b. marked by or indicating a liking for companionship : sociable is friendly, outgoing, and gregarious  
+>    c. of or relating to a social group
+> 2. a. of a plant : growing in a cluster or a colony  
+>    b. living in contiguous nests but not forming a true colony —used especially of wasps and bees
+>
+> -- www.merriam-webster.com --
 
 ## Installation
 
