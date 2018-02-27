@@ -5,8 +5,7 @@ const { readFile } = require("fs");
 const meow = require("meow");
 const execa = require("execa");
 const globby = require("globby");
-const greg = require(".");
-
+const pkgDir = require("pkg-dir");
 const cli = meow(
   `
   Usage
@@ -29,31 +28,39 @@ const cli = meow(
   }
 );
 
-const { pkg: { workspaces }, input, flags: { scope = [] } } = cli;
+const { input, flags: { scope = [] } } = cli;
 
-const packages = workspaces.map(dir => path.join(dir, "package.json"));
+pkgDir(process.cwd()).then(cwd => {
+  const pkg = path.join(cwd, "package.json");
 
-globby(packages).then(files => {
-  files.forEach(file => {
-    const { dir: cwd } = path.parse(file);
-    if (scope.length > 0) {
-      if (!scope.includes(cwd)) {
-        return;
-      }
+  readFile(pkg, "utf-8", (err, content) => {
+    if (err) {
+      throw err;
     }
-    readFile(file, "utf-8", (err, content) => {
-      const { scripts } = JSON.parse(content);
-      const fullpath = path.join(__dirname, cwd);
-      execa("npm", input, { cwd })
-        .then(result => {})
-        .catch(err => {
-          const missingScript = err.stderr.match("missing script:");
-          if (missingScript) {
-            // skip error
+    const { workspaces = [] } = JSON.parse(content);
+    const packages = workspaces.map(dir => path.join(dir, "package.json"));
+
+    globby(packages).then(files => {
+      files.forEach(file => {
+        const { dir: cwd } = path.parse(file);
+        if (scope.length > 0) {
+          if (!scope.includes(cwd)) {
             return;
           }
-          throw err;
-        });
+        }
+        const { scripts } = JSON.parse(content);
+        const fullpath = path.join(__dirname, cwd);
+        execa("npm", input, { cwd })
+          .then(result => {})
+          .catch(err => {
+            const missingScript = err.stderr.match("missing script:");
+            if (missingScript) {
+              // skip error
+              return;
+            }
+            throw err;
+          });
+      });
     });
   });
 });
